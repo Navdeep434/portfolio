@@ -5,6 +5,7 @@ import { FiArrowDown, FiArrowRight, FiDownload } from "react-icons/fi";
 import MagneticButton from "@/components/magnetic-button";
 import Terminal from "@/components/terminal";
 import ParticleField from "@/components/particle-field";
+import { withBasePath } from "@/lib/base-path";
 
 const headline = "Full-Stack Engineer building scalable systems across Java, Next.js & Laravel.";
 
@@ -107,7 +108,7 @@ export default function Hero() {
             Contact Me
           </MagneticButton>
           <MagneticButton
-            href="/resume.pdf"
+            href={withBasePath("/resume.pdf")}
             download="Navdeep-Raushan-Resume.pdf"
             className="inline-flex items-center gap-2 rounded-full border border-transparent px-6 py-3 text-sm font-semibold text-muted transition-colors hover:text-accent"
           >

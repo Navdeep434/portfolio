@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const siteUrl = "https://example.com";
+const siteUrl = "https://navdeep434.github.io/portfolio";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -57,9 +57,6 @@ export const metadata: Metadata = {
     description:
       "Full-Stack Engineer building scalable systems across Java, Next.js & Laravel.",
     images: ["/og-image.png"],
-  },
-  icons: {
-    icon: "/favicon.ico",
   },
 };
 

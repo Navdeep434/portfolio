@@ -23,6 +23,7 @@ import {
   FiMousePointer,
 } from "react-icons/fi";
 import { socials } from "@/lib/data";
+import { withBasePath } from "@/lib/base-path";
 import {
   CURSOR_STYLES,
   cursorStyleLabels,
@@ -227,7 +228,7 @@ export default function CommandPalette() {
                     <Command.Item
                       onSelect={() => {
                         const link = document.createElement("a");
-                        link.href = "/resume.pdf";
+                        link.href = withBasePath("/resume.pdf");
                         link.download = "Navdeep-Raushan-Resume.pdf";
                         link.click();
                         setOpen(false);
