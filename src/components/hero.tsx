@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useScroll,
@@ -15,6 +15,16 @@ import ParticleField from "@/components/particle-field";
 import { withBasePath } from "@/lib/base-path";
 
 const nameWords = ["Navdeep", "Raushan"];
+
+function getGreeting(date: Date) {
+  const hour = date.getHours();
+
+  if (hour < 5) return "Good night";
+  if (hour < 12) return "Good morning";
+  if (hour < 17) return "Good afternoon";
+  if (hour < 21) return "Good evening";
+  return "Good night";
+}
 
 const nameContainer: Variants = {
   hidden: {},
@@ -35,7 +45,18 @@ const letter: Variants = {
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [greeting, setGreeting] = useState("Hello");
   const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    const updateGreeting = () => setGreeting(getGreeting(new Date()));
+
+    updateGreeting();
+    const interval = window.setInterval(updateGreeting, 60_000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -104,6 +125,16 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              className="mb-3 font-mono text-sm text-accent"
+              aria-live="polite"
+            >
+              {greeting}, welcome to my portfolio.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               className="mb-7 inline-flex items-center gap-2 rounded-full border border-border-subtle bg-surface/60 px-4 py-1.5 text-sm text-muted"
             >
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
