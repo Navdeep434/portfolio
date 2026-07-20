@@ -35,22 +35,23 @@ const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Navdeep Raushan — Full-Stack Software Engineer",
+    default: "Navdeep Raushan — Full-Stack Developer",
     template: "%s — Navdeep Raushan",
   },
   description:
-    "Full-Stack Engineer building scalable systems across Java/Spring Boot, Next.js/TypeScript, and Laravel. Explore my projects, experience, and skills.",
+    "Full-Stack Developer building scalable systems across Node.js, Express, React, and Next.js. Explore my projects, experience, and skills.",
   keywords: [
     "Navdeep Raushan",
     "Software Engineer",
     "Full-Stack Developer",
-    "Java Developer",
-    "Spring Boot",
+    "Node.js Developer",
+    "Express.js",
+    "React Developer",
     "Next.js Developer",
-    "TypeScript",
-    "Laravel Developer",
-    "React",
-    "SQL Server",
+    "JavaScript",
+    "MongoDB",
+    "MySQL",
+    "Socket.io",
     "Portfolio",
   ],
   authors: [{ name: "Navdeep Raushan", url: siteUrl }],
@@ -61,17 +62,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Navdeep Raushan — Full-Stack Software Engineer",
+    title: "Navdeep Raushan — Full-Stack Developer",
     description:
-      "Full-Stack Engineer building scalable systems across Java, Next.js & Laravel.",
+      "Full-Stack Developer building scalable systems across Node.js, React & Next.js.",
     siteName: "Navdeep Raushan Portfolio",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Navdeep Raushan — Full-Stack Software Engineer",
+    title: "Navdeep Raushan — Full-Stack Developer",
     description:
-      "Full-Stack Engineer building scalable systems across Java, Next.js & Laravel.",
+      "Full-Stack Developer building scalable systems across Node.js, React & Next.js.",
     images: ["/og-image.png"],
   },
   ...(googleSiteVerification

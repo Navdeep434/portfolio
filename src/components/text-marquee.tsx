@@ -1,7 +1,7 @@
 const phrases = [
   { text: "BUILDING RELIABLE SYSTEMS", outlined: false },
   { text: "SHIPPING CLEAN CODE", outlined: true },
-  { text: "JAVA · NEXT.JS · LARAVEL", outlined: false },
+  { text: "NODE.JS · REACT · MONGODB", outlined: false },
   { text: "OPEN TO NEW ROLES", outlined: true },
 ];
 

@@ -1,47 +1,58 @@
 import type { IconType } from "react-icons";
 import {
-  FaJava,
-  FaLaravel,
-  FaPhp,
   FaReact,
   FaGitAlt,
+  FaGithub,
   FaDocker,
+  FaBootstrap,
+  FaHtml5,
+  FaCss3Alt,
+  FaNodeJs,
 } from "react-icons/fa";
 import {
-  SiSpringboot,
   SiNextdotjs,
-  SiTypescript,
+  SiJavascript,
   SiTailwindcss,
   SiMysql,
+  SiMongodb,
   SiPostman,
+  SiExpress,
+  SiSocketdotio,
+  SiJira,
+  SiRedis,
 } from "react-icons/si";
-import { TbApi, TbDatabase } from "react-icons/tb";
-import { VscGitPullRequest } from "react-icons/vsc";
+import { TbApi } from "react-icons/tb";
+import { FiLock } from "react-icons/fi";
 import FadeIn from "@/components/fade-in";
 import SpotlightCard from "@/components/spotlight-card";
 import SectionKicker from "@/components/section-kicker";
 import { skillCategories } from "@/lib/data";
 
 const iconMap: Record<string, IconType> = {
-  java: FaJava,
-  spring: SiSpringboot,
-  laravel: FaLaravel,
-  php: FaPhp,
-  api: TbApi,
-  nextjs: SiNextdotjs,
   react: FaReact,
-  typescript: SiTypescript,
+  nextjs: SiNextdotjs,
+  javascript: SiJavascript,
   tailwind: SiTailwindcss,
-  mssql: TbDatabase,
+  bootstrap: FaBootstrap,
+  html5: FaHtml5,
+  css3: FaCss3Alt,
+  nodejs: FaNodeJs,
+  express: SiExpress,
+  api: TbApi,
+  jwt: FiLock,
+  socketio: SiSocketdotio,
   mysql: SiMysql,
+  mongodb: SiMongodb,
   git: FaGitAlt,
-  docker: FaDocker,
+  github: FaGithub,
   postman: SiPostman,
-  cicd: VscGitPullRequest,
+  jira: SiJira,
+  redis: SiRedis,
+  docker: FaDocker,
 };
 
-// Bento layout: Backend is the hero tile (most items, tallest); the rest
-// arrange around it instead of four identical equal-width columns.
+// Bento layout: the first category (most items) is the hero tile; the
+// rest arrange around it instead of four identical equal-width columns.
 const tileSpan = [
   "lg:col-span-2 lg:row-span-2",
   "lg:col-span-2",
@@ -57,7 +68,7 @@ export default function Skills() {
         <FadeIn>
           <SectionKicker index="02" label="Skills" />
           <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            A toolkit spanning three ecosystems
+            A JavaScript-first toolkit, front to back
           </h2>
           <p className="mt-4 max-w-2xl text-base text-muted">
             Comfortable owning a feature from database schema to deployed UI.

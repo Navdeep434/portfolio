@@ -10,7 +10,7 @@ const focusAreas = [
   {
     title: "Backend Architecture",
     description:
-      "Designing services in Java/Spring Boot and Laravel that stay maintainable as they scale.",
+      "Designing Node.js/Express services with JWT auth and RBAC that stay maintainable as they scale.",
   },
   {
     title: "API Design",
@@ -20,14 +20,14 @@ const focusAreas = [
   {
     title: "Full-Stack Delivery",
     description:
-      "Owning features end-to-end — from SQL schema to a polished Next.js interface.",
+      "Owning features end-to-end — from MySQL/MongoDB schema to a polished React interface.",
   },
 ];
 
 const stats = [
   { value: 3, suffix: "+", label: "Years experience" },
-  { value: 20, suffix: "+", label: "Projects shipped" },
-  { value: 3, suffix: "", label: "Tech ecosystems" },
+  { value: 4, suffix: "", label: "Full-stack roles" },
+  { value: 5, suffix: "", label: "Business domains" },
 ];
 
 export default function About() {
@@ -74,18 +74,20 @@ export default function About() {
 
             <FadeIn delay={0.1}>
               <p className="mt-6 text-base leading-relaxed text-muted">
-                I&apos;m a software engineer who moves comfortably across the
-                stack — writing REST APIs in Java and Spring Boot, building
-                MVC applications in Laravel, and shipping modern, reactive
-                frontends in Next.js and TypeScript. I care about clean
-                architecture, readable code, and systems that are easy to
-                reason about six months later.
+                I&apos;m a full-stack developer who moves comfortably across
+                the stack — building secure REST APIs in Node.js and
+                Express, designing JWT-based auth and role-based access
+                control, and shipping responsive frontends in React and
+                Next.js. I care about clean architecture, readable code, and
+                systems that are easy to reason about six months later.
               </p>
               <p className="mt-4 text-base leading-relaxed text-muted">
-                Most of my work sits at the intersection of backend
+                Across procurement, hospitality, telecom, and e-commerce
+                systems, most of my work sits at the intersection of backend
                 architecture and full-stack delivery: designing the data
                 model, exposing it through a well-considered API, and
-                building the interface that makes it usable.
+                building the interface that makes it usable — with Socket.io
+                wired in wherever things need to happen in real time.
               </p>
             </FadeIn>
 

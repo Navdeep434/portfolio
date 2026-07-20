@@ -34,6 +34,7 @@ export default function Experience() {
                       {item.duration}
                     </span>
                   </div>
+                  <p className="mt-0.5 text-xs text-muted">{item.location}</p>
 
                   <ul className="mt-4 space-y-2">
                     {item.bullets.map((bullet, bi) => (

@@ -9,43 +9,43 @@ export type ArchitectureLab = {
 
 export const architectureLabs: ArchitectureLab[] = [
   {
-    id: "Java",
-    color: "#fbbf24",
-    title: "Resilient service architecture",
-    copy: "A production-minded request path with clear boundaries, validation at the edge, and graceful failure handling.",
+    id: "Node.js",
+    color: "#84cc16",
+    title: "Secure, RBAC-driven service architecture",
+    copy: "A production request path with JWT-based auth, role-based access control, and validated boundaries between layers.",
     nodes: [
       { name: "Client", detail: "Validated request" },
-      { name: "Spring API", detail: "Auth · REST · cache" },
-      { name: "Domain", detail: "Business rules" },
-      { name: "SQL Server", detail: "Reliable persistence" },
+      { name: "Express API", detail: "JWT · RBAC · REST" },
+      { name: "Service layer", detail: "Business rules" },
+      { name: "MySQL", detail: "Reliable persistence" },
     ],
-    pulse: "$ system.status → 18ms avg service latency",
+    pulse: "$ system.status → RBAC enforced on every route",
   },
   {
     id: "Next.js",
-    color: "#34d399",
+    color: "#38bdf8",
     title: "Fast interface delivery",
-    copy: "A progressive frontend path tuned for a useful first paint, end-to-end type safety, and instant user feedback.",
+    copy: "A progressive frontend path tuned for a useful first paint, component reusability, and instant user feedback.",
     nodes: [
       { name: "Edge", detail: "Route & cache" },
       { name: "Server UI", detail: "Streamed shell" },
-      { name: "React", detail: "Interactive islands" },
+      { name: "React", detail: "Interactive components" },
       { name: "User", detail: "Instant feedback" },
     ],
     pulse: "$ system.status → progressively enhanced by default",
   },
   {
-    id: "Laravel",
-    color: "#fb7185",
-    title: "Pragmatic product backend",
-    copy: "A maintainable application flow for shipping business value quickly without sacrificing structure.",
+    id: "Real-time",
+    color: "#f472b6",
+    title: "Real-time communication architecture",
+    copy: "A bidirectional event path for live consultations, chat, and order tracking without polling.",
     nodes: [
-      { name: "Route", detail: "Request entry" },
-      { name: "Controller", detail: "Orchestration" },
-      { name: "Service", detail: "Domain logic" },
-      { name: "MySQL", detail: "Models & queues" },
+      { name: "Client", detail: "WebSocket connect" },
+      { name: "Socket.io gateway", detail: "Event routing" },
+      { name: "Event handlers", detail: "Business logic" },
+      { name: "MongoDB", detail: "Live state" },
     ],
-    pulse: "$ system.status → built for iterative delivery",
+    pulse: "$ system.status → sub-second event delivery",
   },
 ];
 
@@ -56,38 +56,43 @@ export type SkillCategory = {
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Backend",
+    title: "Frontend",
     items: [
-      { name: "Java", icon: "java" },
-      { name: "Spring Boot", icon: "spring" },
-      { name: "Laravel", icon: "laravel" },
-      { name: "PHP", icon: "php" },
-      { name: "REST APIs", icon: "api" },
+      { name: "React.js", icon: "react" },
+      { name: "Next.js", icon: "nextjs" },
+      { name: "JavaScript (ES6+)", icon: "javascript" },
+      { name: "Tailwind CSS", icon: "tailwind" },
+      { name: "Bootstrap", icon: "bootstrap" },
+      { name: "HTML5", icon: "html5" },
+      { name: "CSS3", icon: "css3" },
     ],
   },
   {
-    title: "Frontend",
+    title: "Backend",
     items: [
-      { name: "Next.js", icon: "nextjs" },
-      { name: "React", icon: "react" },
-      { name: "TypeScript", icon: "typescript" },
-      { name: "Tailwind CSS", icon: "tailwind" },
+      { name: "Node.js", icon: "nodejs" },
+      { name: "Express.js", icon: "express" },
+      { name: "REST APIs", icon: "api" },
+      { name: "JWT Authentication", icon: "jwt" },
+      { name: "Socket.io", icon: "socketio" },
     ],
   },
   {
     title: "Database",
     items: [
-      { name: "SQL Server", icon: "mssql" },
       { name: "MySQL", icon: "mysql" },
+      { name: "MongoDB", icon: "mongodb" },
     ],
   },
   {
     title: "Tools",
     items: [
       { name: "Git", icon: "git" },
-      { name: "Docker", icon: "docker" },
+      { name: "GitHub", icon: "github" },
       { name: "Postman", icon: "postman" },
-      { name: "CI/CD", icon: "cicd" },
+      { name: "Jira", icon: "jira" },
+      { name: "Redis", icon: "redis" },
+      { name: "Docker", icon: "docker" },
     ],
   },
 ];
@@ -95,39 +100,58 @@ export const skillCategories: SkillCategory[] = [
 export type ExperienceItem = {
   role: string;
   company: string;
+  location: string;
   duration: string;
   bullets: string[];
 };
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Software Engineer",
-    company: "Company Name",
-    duration: "2025 — Present",
+    role: "Full Stack Developer",
+    company: "RCS Tech",
+    location: "Bengaluru, Karnataka",
+    duration: "Jul 2025 — Present",
     bullets: [
-      "Designed and shipped REST APIs in Spring Boot serving production traffic across multiple client applications.",
-      "Built full-stack features end-to-end with Next.js/TypeScript on the frontend and Java or Laravel on the backend.",
-      "Optimized SQL Server queries and schema design, reducing average response times on key endpoints.",
+      "Developing enterprise Vendor Management and Procurement-to-Pay (P2P) systems using Node.js and Express.js.",
+      "Designing secure RESTful APIs with JWT-based authentication and role-based access control (RBAC).",
+      "Building automated compliance reporting modules to streamline regulatory and operational processes.",
+      "Optimizing MySQL queries and backend services for improved scalability and performance.",
     ],
   },
   {
-    role: "Backend Developer",
-    company: "Previous Company",
-    duration: "2024 — 2025",
+    role: "Full Stack Developer (Freelance)",
+    company: "Independent",
+    location: "New Delhi, India",
+    duration: "Aug 2024 — Jun 2025",
     bullets: [
-      "Maintained and extended Laravel MVC applications, including auth, billing, and admin tooling.",
-      "Collaborated with frontend engineers to define clean API contracts and reduce integration bugs.",
-      "Introduced CI/CD pipelines that cut deployment time and manual QA overhead.",
+      "Developed NandNiwas — an old age home & resort management system with room management, resident tracking, and automated invoice generation.",
+      "Built 96Astro — an astrology platform enabling course purchases, real-time text/video consultations, and integrated e-commerce.",
+      "Designed admin modules for astrologer management, order handling, and user activity monitoring.",
+      "Implemented real-time communication using Socket.io and secure payment workflows.",
     ],
   },
   {
-    role: "Junior Developer",
-    company: "First Company",
-    duration: "2023 — 2024",
+    role: "Full Stack Developer",
+    company: "Einsicht Technologies",
+    location: "Hyderabad, India",
+    duration: "Jan 2023 — Aug 2024",
     bullets: [
-      "Contributed to internal tools using PHP and MySQL.",
-      "Picked up Java and Spring fundamentals while assisting on a backend migration project.",
-      "Wrote unit and integration tests to improve coverage on legacy modules.",
+      "Developed a telecom CRM system managing SIM cards, tariffs, smartphones, and customer lifecycle workflows.",
+      "Built and maintained responsive frontend applications using React.js.",
+      "Designed RESTful APIs and backend services using Node.js and MySQL.",
+      "Collaborated with cross-functional teams to deliver high-quality, production-ready solutions.",
+    ],
+  },
+  {
+    role: "Full Stack Developer (Freelance)",
+    company: "Einsicht Technologies",
+    location: "Hyderabad, India",
+    duration: "Apr 2022 — Dec 2022",
+    bullets: [
+      "Developed Metallorum, an online gold listing and selling platform.",
+      "Implemented real-time pricing updates via API integrations.",
+      "Designed secure backend architecture and integrated payment gateway workflows.",
+      "Built a dashboard for managing product listings, transactions, and analytics.",
     ],
   },
 ];
@@ -150,87 +174,80 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "project-one",
-    title: "Project One",
+    slug: "vendor-management-p2p",
+    title: "Vendor Management & P2P Platform",
     description:
-      "A scalable full-stack application with a Spring Boot backend and a Next.js frontend, demonstrating clean API design and modern UI patterns.",
-    tech: ["Java", "Spring Boot", "Next.js", "SQL Server"],
-    github: "https://github.com/Navdeep434",
-    live: "https://example.com",
+      "Enterprise procurement workflows covering vendor onboarding, invoice processing, approval hierarchies, and compliance automation.",
+    tech: ["Node.js", "Express.js", "MySQL", "JWT", "RBAC"],
     featured: true,
-    tone: "#34d399",
+    tone: "#84cc16",
+    year: "2025",
+    role: "Full Stack Developer",
+    problem:
+      "Procurement teams were managing vendor onboarding, invoices, and approvals through disconnected spreadsheets and email threads, making compliance tracking slow and error-prone.",
+    solution:
+      "Built a Node.js/Express platform with JWT-based authentication and role-based access control, covering the full procure-to-pay workflow from vendor onboarding through invoice approval, with automated compliance reporting.",
+    highlights: [
+      "Centralized vendor onboarding and invoice approval into a single auditable workflow.",
+      "Enforced per-role access control (RBAC), reducing unauthorized approval risk.",
+      "Optimized MySQL queries to keep compliance reporting fast at scale.",
+    ],
+  },
+  {
+    slug: "nandniwas",
+    title: "NandNiwas",
+    description:
+      "A full-stack booking and billing platform for a facility serving both long-term residents and short-term resort guests.",
+    tech: ["Node.js", "React.js", "MySQL"],
+    tone: "#e2661c",
     year: "2024",
-    role: "Full-Stack Engineer",
+    role: "Full Stack Developer (Freelance)",
     problem:
-      "The client needed a way to manage inventory across multiple warehouses in real time, but the existing spreadsheet-based process caused stock discrepancies and slow reporting.",
+      "The facility needed to manage two very different guest types — long-term residents and short-term resort stays — through one system, without a unified way to track rooms, billing, or occupancy.",
     solution:
-      "Built a Spring Boot REST API backed by SQL Server for inventory transactions, paired with a Next.js dashboard for real-time stock visibility, filtering, and audit history.",
+      "Built a full-stack room booking and billing automation system with admin dashboards for resident tracking, room allocation, and automated invoice generation.",
     highlights: [
-      "Reduced stock discrepancy incidents by centralizing writes through a single validated API layer.",
-      "Cut manual reporting time by replacing spreadsheet exports with a live dashboard.",
-      "Designed the schema and indexing strategy to keep multi-warehouse queries fast at scale.",
+      "Unified long-term resident and short-term resort bookings in a single system.",
+      "Automated invoice generation, cutting manual billing work.",
+      "Gave staff a real-time view of room allocation and occupancy.",
     ],
   },
   {
-    slug: "project-two",
-    title: "Project Two",
+    slug: "96astro",
+    title: "96Astro",
     description:
-      "A Laravel-powered platform with role-based access control, background jobs, and a responsive dashboard built with Tailwind CSS.",
-    tech: ["Laravel", "PHP", "MySQL", "Tailwind"],
-    github: "https://github.com/buildwithcode915",
-    live: "https://example.com",
-    year: "2023",
-    role: "Backend Developer",
-    tone: "#fbbf24",
+      "An astrology course marketplace with real-time consultations and integrated e-commerce.",
+    tech: ["Node.js", "React.js", "Socket.io"],
+    tone: "#f472b6",
+    year: "2024",
+    role: "Full Stack Developer (Freelance)",
     problem:
-      "An internal admin tool had grown organically with no clear permission model, making it risky to add new staff roles without accidentally over-granting access.",
+      "The client wanted to sell astrology courses and connect users with astrologers for live consultations, but needed real-time communication and order management in one platform.",
     solution:
-      "Rebuilt the authorization layer in Laravel using policies and role-based gates, added background job queues for slow operations, and rebuilt the admin UI with a responsive Tailwind dashboard.",
+      "Built a course marketplace with integrated e-commerce, real-time text/video consultations via Socket.io, and admin modules for astrologer and order management.",
     highlights: [
-      "Introduced a role/permission model that made adding new staff roles a config change, not a code change.",
-      "Moved slow report generation to background jobs, keeping the UI responsive.",
-      "Delivered a fully responsive dashboard usable on tablets for warehouse staff.",
+      "Enabled live text/video consultations between users and astrologers in real time.",
+      "Built admin tooling for astrologer management and order handling.",
+      "Integrated secure payments and order lifecycle tracking end-to-end.",
     ],
   },
   {
-    slug: "project-three",
-    title: "Project Three",
+    slug: "telecom-crm",
+    title: "Telecom CRM Tool",
     description:
-      "A TypeScript microservice-oriented system with REST APIs, automated testing, and a CI/CD pipeline for continuous delivery.",
-    tech: ["TypeScript", "Node.js", "Docker", "CI/CD"],
-    github: "https://github.com/buildwithcode915",
-    year: "2023",
-    role: "Backend Engineer",
+      "A CRM platform for managing SIM cards, tariffs, smartphones, and customer lifecycle workflows.",
+    tech: ["Node.js", "React.js", "MySQL"],
     tone: "#38bdf8",
+    year: "2023",
+    role: "Full Stack Developer",
     problem:
-      "A monolithic service had become hard to deploy safely — a single bug in any part of the codebase could block releases for the whole team.",
+      "Customer service teams needed a single system to manage SIM cards, tariffs, devices, and offers across the full customer lifecycle, instead of juggling multiple disconnected tools.",
     solution:
-      "Split the monolith into a small set of TypeScript microservices with clear API contracts, containerized with Docker, and wired up a CI/CD pipeline for independent, automated deployments.",
+      "Built scalable RESTful APIs with Node.js, integrated with React.js dashboards, including offer management workflows for new and existing customers.",
     highlights: [
-      "Enabled independent deployments per service, cutting release risk significantly.",
-      "Added automated integration tests that run in CI before every merge.",
-      "Standardized service scaffolding so new services could be spun up in under an hour.",
-    ],
-  },
-  {
-    slug: "project-four",
-    title: "Project Four",
-    description:
-      "An internal tool for data visualization and reporting, built with React and backed by a Java REST API.",
-    tech: ["React", "Java", "REST APIs"],
-    github: "https://github.com/Navdeep434",
-    live: "https://example.com",
-    year: "2022",
-    role: "Full-Stack Developer",
-    tone: "#a78bfa",
-    problem:
-      "Leadership had no easy way to see trends across business metrics without asking an analyst to manually pull and chart the data every week.",
-    solution:
-      "Built a Java REST API exposing aggregated metrics and a React frontend with interactive charts, filters, and scheduled exports.",
-    highlights: [
-      "Gave leadership self-serve access to metrics that previously required a manual request.",
-      "Cut analyst time spent on recurring report requests.",
-      "Designed the API to support new metrics without frontend changes.",
+      "Consolidated SIM, tariff, and device management into one CRM.",
+      "Built offer management workflows for new and existing customers.",
+      "Owned debugging and testing to keep the system stable in production.",
     ],
   },
 ];
@@ -244,13 +261,13 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Navdeep picked up our Spring Boot service with almost no ramp-up time and immediately started raising the right questions about edge cases we hadn't considered. The API he shipped is still the most stable part of our backend.",
+      "Navdeep picked up our Node.js and Express services with almost no ramp-up time and immediately started raising the right questions about edge cases we hadn't considered. The APIs he shipped are still the most stable part of our backend.",
     name: "Engineering Manager",
     role: "Full-time role — placeholder, replace with a real quote",
   },
   {
     quote:
-      "I hired Navdeep for a Laravel dashboard rebuild on a tight deadline. He communicated clearly, scoped the work realistically, and delivered exactly what we agreed on — no scope creep, no surprises.",
+      "I hired Navdeep to build a full booking and billing platform on a tight timeline. He communicated clearly, scoped the work realistically, and delivered exactly what we agreed on — no scope creep, no surprises.",
     name: "Freelance Client",
     role: "Freelance project — placeholder, replace with a real quote",
   },

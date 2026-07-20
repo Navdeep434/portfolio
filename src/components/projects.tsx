@@ -7,7 +7,7 @@ import SectionKicker from "@/components/section-kicker";
 import ProjectCard from "@/components/project-card";
 import { projects } from "@/lib/data";
 
-const filters = ["All", "Java", "Next.js", "Laravel"];
+const filters = ["All", "React.js", "MySQL", "Socket.io"];
 
 export default function Projects() {
   const [filter, setFilter] = useState("All");
@@ -24,8 +24,8 @@ export default function Projects() {
             Selected work
           </h2>
           <p className="mt-4 max-w-2xl text-base text-muted">
-            A mix of backend-heavy services and full-stack applications.
-            Details are placeholders — swap in your real projects.
+            Full-time and freelance builds across procurement, hospitality,
+            and e-commerce — real systems, real users.
           </p>
         </FadeIn>
 

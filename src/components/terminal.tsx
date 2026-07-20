@@ -6,11 +6,11 @@ import { socials } from "@/lib/data";
 
 const introLines = [
   { prompt: true, text: "whoami" },
-  { prompt: false, text: 'navdeep_raushan --role "Full-Stack Engineer"' },
+  { prompt: false, text: 'navdeep_raushan --role "Full-Stack Developer"' },
   { prompt: true, text: "cat stack.json" },
-  { prompt: false, text: '{ "backend": ["Java", "Spring Boot", "Laravel"],' },
-  { prompt: false, text: '  "frontend": ["Next.js", "TypeScript", "React"],' },
-  { prompt: false, text: '  "database": ["SQL Server", "MySQL"] }' },
+  { prompt: false, text: '{ "backend": ["Node.js", "Express.js", "Socket.io"],' },
+  { prompt: false, text: '  "frontend": ["React", "Next.js", "JavaScript"],' },
+  { prompt: false, text: '  "database": ["MySQL", "MongoDB"] }' },
 ];
 
 const INTRO_TEXT = introLines.map((l) => l.text).join("\n");
@@ -42,17 +42,17 @@ function runCommand(raw: string): { output: string[]; clear?: boolean } {
     case "about":
       return {
         output: [
-          "Full-stack engineer working across Java/Spring Boot, Next.js/TypeScript,",
-          "and Laravel. I like clean APIs and interfaces that don't fight the user.",
+          "Full-stack developer working across Node.js/Express, React/Next.js,",
+          "and MySQL/MongoDB. I like clean APIs and interfaces that don't fight the user.",
         ],
       };
     case "skills":
       return {
         output: [
-          "backend:  Java, Spring Boot, Laravel, PHP, REST APIs",
-          "frontend: Next.js, React, TypeScript, Tailwind CSS",
-          "database: SQL Server, MySQL",
-          "tools:    Git, Docker, Postman, CI/CD",
+          "backend:  Node.js, Express.js, REST APIs, JWT, Socket.io",
+          "frontend: React.js, Next.js, JavaScript (ES6+), Tailwind CSS",
+          "database: MySQL, MongoDB",
+          "tools:    Git, GitHub, Postman, Jira, Redis, Docker",
         ],
       };
     case "projects":
@@ -71,7 +71,7 @@ function runCommand(raw: string): { output: string[]; clear?: boolean } {
       window.open(socials.linkedin, "_blank", "noopener,noreferrer");
       return { output: [`→ opening ${socials.linkedin}`] };
     case "whoami":
-      return { output: ["navdeep_raushan (full-stack engineer)"] };
+      return { output: ["navdeep_raushan (full-stack developer)"] };
     case "clear":
       return { output: [], clear: true };
     case "sudo hire-me":

@@ -136,12 +136,12 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.55 }}
               className="mt-5 max-w-lg text-lg leading-relaxed text-muted"
             >
-              <span className="text-gradient font-medium">Full-Stack Engineer</span>{" "}
+              <span className="text-gradient font-medium">Full-Stack Developer</span>{" "}
               building scalable systems across{" "}
-              <span className="text-foreground">Java</span>,{" "}
-              <span className="text-foreground">Next.js</span> &{" "}
-              <span className="text-foreground">Laravel</span> — robust APIs,
-              polished frontends, code that holds up in production.
+              <span className="text-foreground">Node.js</span>,{" "}
+              <span className="text-foreground">React</span> &{" "}
+              <span className="text-foreground">Next.js</span> — secure APIs,
+              real-time features, code that holds up in production.
             </motion.p>
 
             <motion.div

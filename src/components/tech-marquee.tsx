@@ -1,25 +1,27 @@
 import type { IconType } from "react-icons";
-import { FaJava, FaLaravel, FaPhp, FaReact, FaGitAlt, FaDocker } from "react-icons/fa";
+import { FaReact, FaGitAlt, FaDocker, FaNodeJs } from "react-icons/fa";
 import {
-  SiSpringboot,
   SiNextdotjs,
-  SiTypescript,
+  SiJavascript,
   SiTailwindcss,
   SiMysql,
+  SiMongodb,
+  SiExpress,
+  SiSocketdotio,
+  SiRedis,
 } from "react-icons/si";
-import { TbDatabase } from "react-icons/tb";
 
 const items: { name: string; icon: IconType }[] = [
-  { name: "Java", icon: FaJava },
-  { name: "Spring Boot", icon: SiSpringboot },
-  { name: "Next.js", icon: SiNextdotjs },
+  { name: "Node.js", icon: FaNodeJs },
+  { name: "Express.js", icon: SiExpress },
   { name: "React", icon: FaReact },
-  { name: "TypeScript", icon: SiTypescript },
-  { name: "Laravel", icon: FaLaravel },
-  { name: "PHP", icon: FaPhp },
-  { name: "Tailwind CSS", icon: SiTailwindcss },
-  { name: "SQL Server", icon: TbDatabase },
+  { name: "Next.js", icon: SiNextdotjs },
+  { name: "JavaScript", icon: SiJavascript },
+  { name: "Socket.io", icon: SiSocketdotio },
+  { name: "MongoDB", icon: SiMongodb },
   { name: "MySQL", icon: SiMysql },
+  { name: "Tailwind CSS", icon: SiTailwindcss },
+  { name: "Redis", icon: SiRedis },
   { name: "Git", icon: FaGitAlt },
   { name: "Docker", icon: FaDocker },
 ];
