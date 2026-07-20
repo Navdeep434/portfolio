@@ -1,6 +1,5 @@
 import Image from "next/image";
 import FadeIn from "@/components/fade-in";
-import RevealMask from "@/components/reveal-mask";
 import TiltCard from "@/components/tilt-card";
 import SpotlightCard from "@/components/spotlight-card";
 import AnimatedCounter from "@/components/animated-counter";
@@ -40,19 +39,16 @@ export default function About() {
               <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-accent/20 to-transparent blur-2xl" />
               <TiltCard maxTilt={8} className="relative">
                 <div className="glass relative overflow-hidden rounded-[2rem] p-2 shadow-xl shadow-black/10">
-                  <RevealMask
-                    delay={0.2}
-                    className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.5rem] bg-surface-2"
-                  >
+                  <div className="isolate relative aspect-[4/5] w-full overflow-hidden rounded-[1.5rem] bg-surface-2">
                     <Image
                       src="/avatar.jpg"
                       alt="Portrait of Navdeep Raushan"
                       fill
                       sizes="(max-width: 1024px) 60vw, 380px"
-                      className="object-cover"
+                      className="z-10 object-cover"
                       priority={false}
                     />
-                  </RevealMask>
+                  </div>
                 </div>
               </TiltCard>
               <div className="glass absolute -bottom-6 -right-6 rounded-2xl px-5 py-4 shadow-lg">
