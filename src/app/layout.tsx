@@ -7,6 +7,8 @@ import ScrollProgress from "@/components/scroll-progress";
 import ScrollToTop from "@/components/scroll-to-top";
 import KonamiEasterEgg from "@/components/konami-easter-egg";
 import CursorSpotlight from "@/components/cursor-spotlight";
+import Analytics from "@/components/analytics";
+import PersonSchema from "@/components/person-schema";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,7 +28,8 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://navdeep434.github.io/portfolio";
+const siteUrl = "https://navdeepraushan.in";
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -37,18 +40,23 @@ export const metadata: Metadata = {
   description:
     "Full-Stack Engineer building scalable systems across Java/Spring Boot, Next.js/TypeScript, and Laravel. Explore my projects, experience, and skills.",
   keywords: [
+    "Navdeep Raushan",
     "Software Engineer",
     "Full-Stack Developer",
-    "Java",
+    "Java Developer",
     "Spring Boot",
-    "Next.js",
+    "Next.js Developer",
     "TypeScript",
-    "Laravel",
+    "Laravel Developer",
     "React",
+    "SQL Server",
     "Portfolio",
   ],
-  authors: [{ name: "Navdeep Raushan" }],
+  authors: [{ name: "Navdeep Raushan", url: siteUrl }],
   creator: "Navdeep Raushan",
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -65,6 +73,9 @@ export const metadata: Metadata = {
       "Full-Stack Engineer building scalable systems across Java, Next.js & Laravel.",
     images: ["/og-image.png"],
   },
+  ...(googleSiteVerification
+    ? { verification: { google: googleSiteVerification } }
+    : {}),
 };
 
 const themeInitScript = `
@@ -96,6 +107,7 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <PersonSchema />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-accent">
         <Grain />
@@ -104,6 +116,7 @@ export default function RootLayout({
         <ScrollToTop />
         <KonamiEasterEgg />
         <CursorSpotlight />
+        <Analytics />
         {children}
       </body>
     </html>

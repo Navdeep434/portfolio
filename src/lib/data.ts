@@ -269,5 +269,5 @@ export const socials = {
   github: `https://github.com/${githubUsername}`,
   githubFreelance: `https://github.com/${githubFreelanceUsername}`,
   linkedin: "https://www.linkedin.com/in/navdeep-raushan-656895157",
-  email: "n.navdeepraushan98@gmail.com",
+  email: "hello@navdeepraushan.in",
 };
