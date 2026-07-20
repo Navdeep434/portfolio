@@ -19,6 +19,8 @@ type GithubProfile = {
 export default function GithubStats() {
   const [profile, setProfile] = useState<GithubProfile | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [statsCardFailed, setStatsCardFailed] = useState(false);
+  const [streakCardFailed, setStreakCardFailed] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -133,24 +135,39 @@ export default function GithubStats() {
 
           <FadeIn delay={0.1}>
             <div className="flex h-full flex-col gap-4">
-              <div className="overflow-hidden rounded-3xl border border-border-subtle">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&hide_border=true&bg_color=00000000&title_color=34d399&icon_color=34d399&text_color=9aa0a6&ring_color=34d399`}
-                  alt="GitHub stats"
-                  className="w-full"
-                  loading="lazy"
-                />
-              </div>
-              <div className="overflow-hidden rounded-3xl border border-border-subtle">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&hide_border=true&background=00000000&ring=34d399&fire=34d399&currStreakLabel=34d399&sideLabels=9aa0a6&currStreakNum=f2f4f3&sideNums=f2f4f3&dates=6b7075`}
-                  alt="GitHub streak stats"
-                  className="w-full"
-                  loading="lazy"
-                />
-              </div>
+              {!statsCardFailed && (
+                <div className="overflow-hidden rounded-3xl border border-border-subtle">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&hide_border=true&bg_color=00000000&title_color=e2661c&icon_color=e2661c&text_color=a8987f&ring_color=e2661c`}
+                    alt="GitHub stats"
+                    className="w-full"
+                    loading="lazy"
+                    onError={() => setStatsCardFailed(true)}
+                  />
+                </div>
+              )}
+              {!streakCardFailed && (
+                <div className="overflow-hidden rounded-3xl border border-border-subtle">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`https://streak-stats.demolab.com/?user=${githubUsername}&hide_border=true&background=00000000&ring=e2661c&fire=e2661c&currStreakLabel=e2661c&sideLabels=a8987f&currStreakNum=f4ecdd&sideNums=f4ecdd&dates=a8987f`}
+                    alt="GitHub streak stats"
+                    className="w-full"
+                    loading="lazy"
+                    onError={() => setStreakCardFailed(true)}
+                  />
+                </div>
+              )}
+              {statsCardFailed && streakCardFailed && (
+                <div className="flex h-full items-center justify-center rounded-3xl border border-border-subtle bg-surface/60 p-8 text-center">
+                  <p className="text-sm text-muted">
+                    Detailed stats are temporarily unavailable — the badge
+                    service is having a moment. The counts on the left are
+                    live from GitHub directly.
+                  </p>
+                </div>
+              )}
             </div>
           </FadeIn>
         </div>
