@@ -31,40 +31,65 @@ export default function CustomCursor() {
   useEffect(() => {
     if (!enabled) return;
 
-    const onMove = (e: MouseEvent) => {
-      x.set(e.clientX);
-      y.set(e.clientY);
-    };
+    let lastX = -100;
+    let lastY = -100;
 
-    const onOver = (e: MouseEvent) => {
-      const target = (e.target as HTMLElement)?.closest?.(
-        INTERACTIVE_SELECTOR
-      ) as HTMLElement | null;
+    const applyHoverState = (target: HTMLElement | null) => {
       if (target) {
         setHovering(true);
         setLabel(target.getAttribute("data-cursor-text"));
         setHoveredRect(target.getBoundingClientRect());
-      }
-    };
-
-    const onOut = (e: MouseEvent) => {
-      const related = e.relatedTarget as HTMLElement | null;
-      const stillInside = related?.closest?.(INTERACTIVE_SELECTOR);
-      if (!stillInside) {
+      } else {
         setHovering(false);
         setLabel(null);
         setHoveredRect(null);
       }
     };
 
+    const onMove = (e: MouseEvent) => {
+      lastX = e.clientX;
+      lastY = e.clientY;
+      x.set(lastX);
+      y.set(lastY);
+    };
+
+    const onOver = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest?.(
+        INTERACTIVE_SELECTOR
+      ) as HTMLElement | null;
+      if (target) applyHoverState(target);
+    };
+
+    const onOut = (e: MouseEvent) => {
+      const related = e.relatedTarget as HTMLElement | null;
+      const stillInside = related?.closest?.(INTERACTIVE_SELECTOR);
+      if (!stillInside) applyHoverState(null);
+    };
+
     const onDown = () => setPressed(true);
     const onUp = () => setPressed(false);
+
+    // Scrolling moves content under a stationary cursor without firing
+    // mouseover/mouseout, so the hover state (and "VIEW" label) can get
+    // stuck on whatever was last actually moused over. Re-check what's
+    // under the cursor's last known position whenever the page scrolls.
+    let scrollRaf = 0;
+    const onScroll = () => {
+      if (scrollRaf) return;
+      scrollRaf = requestAnimationFrame(() => {
+        scrollRaf = 0;
+        const el = document.elementFromPoint(lastX, lastY) as HTMLElement | null;
+        const target = el?.closest?.(INTERACTIVE_SELECTOR) as HTMLElement | null;
+        applyHoverState(target);
+      });
+    };
 
     document.addEventListener("mousemove", onMove);
     document.addEventListener("mouseover", onOver);
     document.addEventListener("mouseout", onOut);
     document.addEventListener("mousedown", onDown);
     document.addEventListener("mouseup", onUp);
+    window.addEventListener("scroll", onScroll, { passive: true, capture: true });
 
     return () => {
       document.removeEventListener("mousemove", onMove);
@@ -72,6 +97,8 @@ export default function CustomCursor() {
       document.removeEventListener("mouseout", onOut);
       document.removeEventListener("mousedown", onDown);
       document.removeEventListener("mouseup", onUp);
+      window.removeEventListener("scroll", onScroll, true);
+      cancelAnimationFrame(scrollRaf);
     };
   }, [x, y, enabled]);
 
