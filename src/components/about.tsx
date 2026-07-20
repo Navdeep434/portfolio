@@ -24,7 +24,7 @@ const focusAreas = [
 ];
 
 const stats = [
-  { value: 4, suffix: "+", label: "Years experience" },
+  { value: 3, suffix: "+", label: "Years experience" },
   { value: 20, suffix: "+", label: "Projects shipped" },
   { value: 3, suffix: "", label: "Tech ecosystems" },
 ];
@@ -53,7 +53,7 @@ export default function About() {
               </TiltCard>
               <div className="glass absolute -bottom-6 -right-6 rounded-2xl px-5 py-4 shadow-lg">
                 <p className="font-display text-2xl font-semibold text-accent">
-                  <AnimatedCounter value={4} suffix="+" />
+                  <AnimatedCounter value={3} suffix="+" />
                 </p>
                 <p className="text-xs text-muted">Years building software</p>
               </div>

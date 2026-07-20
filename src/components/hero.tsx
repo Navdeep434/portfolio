@@ -7,7 +7,7 @@ import Terminal from "@/components/terminal";
 import ParticleField from "@/components/particle-field";
 import { withBasePath } from "@/lib/base-path";
 
-const name = "Navdeep Raushan";
+const nameWords = ["Navdeep", "Raushan"];
 
 const nameContainer: Variants = {
   hidden: {},
@@ -53,19 +53,23 @@ export default function Hero() {
               Available for new opportunities
             </motion.p>
 
-            <h1 className="sr-only">{name}</h1>
+            <h1 className="sr-only">Navdeep Raushan</h1>
 
             <motion.div
               variants={nameContainer}
               initial="hidden"
               animate="visible"
               aria-hidden="true"
-              className="font-display flex flex-wrap text-[clamp(2.75rem,9vw,6.5rem)] font-semibold leading-[0.92] tracking-tight text-foreground"
+              className="font-display flex flex-wrap gap-x-[0.22em] text-[clamp(2.75rem,9vw,6.5rem)] font-semibold leading-[0.92] tracking-tight text-foreground"
             >
-              {name.split("").map((char, i) => (
-                <motion.span key={i} variants={letter} className="inline-block">
-                  {char === " " ? " " : char}
-                </motion.span>
+              {nameWords.map((word, wi) => (
+                <span key={wi} className="inline-flex whitespace-nowrap">
+                  {word.split("").map((char, ci) => (
+                    <motion.span key={ci} variants={letter} className="inline-block">
+                      {char}
+                    </motion.span>
+                  ))}
+                </span>
               ))}
             </motion.div>
 

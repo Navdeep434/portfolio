@@ -103,7 +103,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Software Engineer",
     company: "Company Name",
-    duration: "2023 — Present",
+    duration: "2025 — Present",
     bullets: [
       "Designed and shipped REST APIs in Spring Boot serving production traffic across multiple client applications.",
       "Built full-stack features end-to-end with Next.js/TypeScript on the frontend and Java or Laravel on the backend.",
@@ -113,7 +113,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Backend Developer",
     company: "Previous Company",
-    duration: "2021 — 2023",
+    duration: "2024 — 2025",
     bullets: [
       "Maintained and extended Laravel MVC applications, including auth, billing, and admin tooling.",
       "Collaborated with frontend engineers to define clean API contracts and reduce integration bugs.",
@@ -123,7 +123,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Junior Developer",
     company: "First Company",
-    duration: "2020 — 2021",
+    duration: "2023 — 2024",
     bullets: [
       "Contributed to internal tools using PHP and MySQL.",
       "Picked up Java and Spring fundamentals while assisting on a backend migration project.",
