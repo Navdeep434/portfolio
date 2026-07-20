@@ -7,22 +7,22 @@ import Terminal from "@/components/terminal";
 import ParticleField from "@/components/particle-field";
 import { withBasePath } from "@/lib/base-path";
 
-const headline = "Full-Stack Engineer building scalable systems across Java, Next.js & Laravel.";
+const name = "Navdeep Raushan";
 
-const container: Variants = {
+const nameContainer: Variants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.028 },
+    transition: { staggerChildren: 0.045 },
   },
 };
 
-const word: Variants = {
-  hidden: { opacity: 0, y: 16, filter: "blur(6px)" },
+const letter: Variants = {
+  hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
@@ -30,7 +30,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center overflow-hidden pt-24"
+      className="relative flex min-h-screen items-center overflow-hidden pb-20 pt-28"
     >
       <div className="mesh-bg">
         <div className="mesh-blob left-[-10%] top-[-10%] h-[420px] w-[420px] bg-accent" />
@@ -41,90 +41,89 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 lg:px-8">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-border-subtle bg-surface/60 px-4 py-1.5 text-sm text-muted"
-        >
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
-          Available for new opportunities
-        </motion.p>
+        <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-8">
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-7 inline-flex items-center gap-2 rounded-full border border-border-subtle bg-surface/60 px-4 py-1.5 text-sm text-muted"
+            >
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
+              Available for new opportunities
+            </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-display text-2xl font-medium text-muted sm:text-3xl"
-        >
-          Hi, I&apos;m Navdeep Raushan
-        </motion.h1>
+            <h1 className="sr-only">{name}</h1>
 
-        <motion.h2
-          variants={container}
-          initial="hidden"
-          animate="visible"
-          className="mt-3 max-w-4xl font-display text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
-        >
-          {headline.split(" ").map((w, i) => (
-            <motion.span key={i} variants={word} className="mr-3 inline-block">
-              {w === "Java," || w === "Next.js" || w === "Laravel." ? (
-                <span className="text-gradient">{w}</span>
-              ) : (
-                w
-              )}
-            </motion.span>
-          ))}
-        </motion.h2>
+            <motion.div
+              variants={nameContainer}
+              initial="hidden"
+              animate="visible"
+              aria-hidden="true"
+              className="font-display flex flex-wrap text-[clamp(2.75rem,9vw,6.5rem)] font-semibold leading-[0.92] tracking-tight text-foreground"
+            >
+              {name.split("").map((char, i) => (
+                <motion.span key={i} variants={letter} className="inline-block">
+                  {char === " " ? " " : char}
+                </motion.span>
+              ))}
+            </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-6 max-w-xl text-lg text-muted"
-        >
-          I design robust APIs, ship polished frontends, and connect the two
-          with clean, maintainable code — from Spring Boot services to
-          Next.js interfaces.
-        </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.55 }}
+              className="mt-5 max-w-lg text-lg leading-relaxed text-muted"
+            >
+              <span className="text-gradient font-medium">Full-Stack Engineer</span>{" "}
+              building scalable systems across{" "}
+              <span className="text-foreground">Java</span>,{" "}
+              <span className="text-foreground">Next.js</span> &{" "}
+              <span className="text-foreground">Laravel</span> — robust APIs,
+              polished frontends, code that holds up in production.
+            </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.75 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
-        >
-          <MagneticButton
-            href="#projects"
-            className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-[#04120c] transition-shadow hover:shadow-lg hover:shadow-accent/25"
-          >
-            View Projects
-            <FiArrowRight className="transition-transform group-hover:translate-x-1" />
-          </MagneticButton>
-          <MagneticButton
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-border-subtle px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-accent hover:text-accent"
-          >
-            Contact Me
-          </MagneticButton>
-          <MagneticButton
-            href={withBasePath("/resume.pdf")}
-            download="Navdeep-Raushan-Resume.pdf"
-            className="inline-flex items-center gap-2 rounded-full border border-transparent px-6 py-3 text-sm font-semibold text-muted transition-colors hover:text-accent"
-          >
-            <FiDownload />
-            Download Resume
-          </MagneticButton>
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.75 }}
+              className="mt-10 flex flex-wrap items-center gap-4"
+            >
+              <MagneticButton
+                href="#projects"
+                className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-[#1c1005] transition-shadow hover:shadow-lg hover:shadow-accent/25"
+              >
+                View Projects
+                <FiArrowRight className="transition-transform group-hover:translate-x-1" />
+              </MagneticButton>
+              <MagneticButton
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-full border border-border-subtle px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-accent hover:text-accent"
+              >
+                Contact Me
+              </MagneticButton>
+              <MagneticButton
+                href={withBasePath("/resume.pdf")}
+                download="Navdeep-Raushan-Resume.pdf"
+                className="inline-flex items-center gap-2 rounded-full border border-transparent px-6 py-3 text-sm font-semibold text-muted transition-colors hover:text-accent"
+              >
+                <FiDownload />
+                Download Resume
+              </MagneticButton>
+            </motion.div>
+          </div>
 
-        <Terminal />
+          <div className="-rotate-2 lg:mb-2 lg:translate-x-4">
+            <Terminal />
+          </div>
+        </div>
       </div>
 
       <motion.a
         href="#about"
         aria-label="Scroll to About section"
         data-cursor-hover
-        className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 text-muted"
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-muted"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
       >

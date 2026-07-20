@@ -172,7 +172,7 @@ export default function CustomCursor() {
         className="pointer-events-none fixed left-0 top-0 z-[70] flex items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 opacity-80 blur-[1px] will-change-transform"
       >
         {label && (
-          <span className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-wide text-[#04120c] blur-none">
+          <span className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-wide text-[#1c1005] blur-none">
             {label}
           </span>
         )}
@@ -212,7 +212,7 @@ export default function CustomCursor() {
         transition={{ type: "spring", stiffness: 420, damping: 32 }}
         className="pointer-events-none fixed left-0 top-0 z-[70] flex items-center justify-center rounded-full will-change-transform"
       >
-        {hovering && <FiArrowUpRight size={14} className="text-[#04120c]" />}
+        {hovering && <FiArrowUpRight size={14} className="text-[#1c1005]" />}
       </motion.div>
     );
   }

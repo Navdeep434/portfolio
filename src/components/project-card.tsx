@@ -28,7 +28,7 @@ export default function ProjectCard({ project, index, total, wide = false }: Pro
       href={`/projects/${project.slug}`}
       aria-label={`${project.title} case study`}
       data-cursor-hover
-      className="flex h-9 w-9 items-center justify-center rounded-full border border-border-subtle text-muted transition-all duration-200 hover:-rotate-6 hover:border-accent hover:bg-accent hover:text-[#04120c]"
+      className="flex h-9 w-9 items-center justify-center rounded-full border border-border-subtle text-muted transition-all duration-200 hover:-rotate-6 hover:border-accent hover:bg-accent hover:text-[#1c1005]"
     >
       <FiArrowUpRight size={15} />
     </Link>

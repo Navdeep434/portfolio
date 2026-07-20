@@ -136,7 +136,7 @@ export default function Terminal() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.85 }}
       onClick={() => inputRef.current?.focus()}
-      className="glass mt-12 w-full max-w-lg overflow-hidden rounded-2xl shadow-xl shadow-black/10"
+      className="glass w-full max-w-lg overflow-hidden rounded-2xl shadow-xl shadow-black/10"
     >
       <div className="flex items-center gap-1.5 border-b border-border-subtle px-4 py-3">
         <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />

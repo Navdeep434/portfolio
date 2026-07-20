@@ -93,7 +93,7 @@ export default async function ProjectPage({ params }: PageProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor-hover
-                  className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-[#04120c] transition-shadow hover:shadow-lg hover:shadow-accent/25"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-[#1c1005] transition-shadow hover:shadow-lg hover:shadow-accent/25"
                 >
                   Live demo <FiArrowUpRight size={15} />
                 </a>

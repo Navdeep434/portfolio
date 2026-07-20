@@ -187,7 +187,7 @@ export default function Contact() {
               <button
                 type="submit"
                 data-cursor-hover
-                className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-[#04120c] transition-shadow hover:shadow-lg hover:shadow-accent/25"
+                className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-[#1c1005] transition-shadow hover:shadow-lg hover:shadow-accent/25"
               >
                 Send Message
                 <FiSend size={15} />

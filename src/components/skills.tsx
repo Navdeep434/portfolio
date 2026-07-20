@@ -40,6 +40,16 @@ const iconMap: Record<string, IconType> = {
   cicd: VscGitPullRequest,
 };
 
+// Bento layout: Backend is the hero tile (most items, tallest); the rest
+// arrange around it instead of four identical equal-width columns.
+const tileSpan = [
+  "lg:col-span-2 lg:row-span-2",
+  "lg:col-span-2",
+  "lg:col-span-1",
+  "lg:col-span-1",
+];
+const tileRadius = ["rounded-3xl", "rounded-2xl", "rounded-xl", "rounded-xl"];
+
 export default function Skills() {
   return (
     <section id="skills" className="relative py-28 lg:py-36">
@@ -54,14 +64,22 @@ export default function Skills() {
           </p>
         </FadeIn>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:auto-rows-[minmax(0,1fr)] lg:grid-cols-4">
           {skillCategories.map((category, ci) => (
-            <FadeIn key={category.title} delay={ci * 0.08}>
-              <SpotlightCard className="h-full rounded-2xl border border-border-subtle bg-surface/60 p-6 transition-colors hover:border-accent/40">
+            <FadeIn
+              key={category.title}
+              delay={ci * 0.08}
+              className={`h-full ${tileSpan[ci % tileSpan.length]}`}
+            >
+              <SpotlightCard
+                className={`h-full border border-border-subtle bg-surface/60 p-6 transition-colors hover:border-accent/40 ${tileRadius[ci % tileRadius.length]}`}
+              >
                 <h3 className="font-display text-sm font-semibold uppercase tracking-wide text-muted">
                   {category.title}
                 </h3>
-                <div className="mt-5 grid grid-cols-1 gap-2">
+                <div
+                  className={`mt-5 grid gap-2 ${ci === 0 ? "sm:grid-cols-2" : "grid-cols-1"}`}
+                >
                   {category.items.map((item) => {
                     const Icon = iconMap[item.icon];
                     return (
