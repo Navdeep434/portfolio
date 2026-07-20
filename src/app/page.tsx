@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import TechMarquee from "@/components/tech-marquee";
+import TextMarquee from "@/components/text-marquee";
 import About from "@/components/about";
 import Skills from "@/components/skills";
 import ArchitectureLab from "@/components/architecture-lab";
@@ -22,6 +23,7 @@ export default function Home() {
         <Skills />
         <ArchitectureLab />
         <GithubStats />
+        <TextMarquee />
         <Experience />
         <Projects />
         <Testimonials />

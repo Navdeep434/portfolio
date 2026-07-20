@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 import { FiArrowDown, FiArrowRight, FiDownload } from "react-icons/fi";
 import MagneticButton from "@/components/magnetic-button";
 import Terminal from "@/components/terminal";
@@ -27,20 +28,45 @@ const letter: Variants = {
 };
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const yBlobFast = useTransform(scrollYProgress, [0, 1], [0, -140]);
+  const yBlobMid = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const yBlobSlow = useTransform(scrollYProgress, [0, 1], [0, -180]);
+  const yGrid = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
+  const contentY = useTransform(scrollYProgress, [0, 0.55], [0, 60]);
+
   return (
     <section
+      ref={sectionRef}
       id="hero"
       className="relative flex min-h-screen items-center overflow-hidden pb-20 pt-28"
     >
       <div className="mesh-bg">
-        <div className="mesh-blob left-[-10%] top-[-10%] h-[420px] w-[420px] bg-accent" />
-        <div className="mesh-blob right-[-5%] top-[15%] h-[360px] w-[360px] bg-accent-2" />
-        <div className="mesh-blob bottom-[-15%] left-[20%] h-[380px] w-[380px] bg-accent" />
-        <div className="grid-pattern absolute inset-0" />
+        <motion.div
+          style={{ y: yBlobFast }}
+          className="mesh-blob left-[-10%] top-[-10%] h-[420px] w-[420px] bg-accent"
+        />
+        <motion.div
+          style={{ y: yBlobMid }}
+          className="mesh-blob right-[-5%] top-[15%] h-[360px] w-[360px] bg-accent-2"
+        />
+        <motion.div
+          style={{ y: yBlobSlow }}
+          className="mesh-blob bottom-[-15%] left-[20%] h-[380px] w-[380px] bg-accent"
+        />
+        <motion.div style={{ y: yGrid }} className="grid-pattern absolute inset-0" />
         <ParticleField />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 lg:px-8">
+      <motion.div
+        style={{ opacity: contentOpacity, y: contentY }}
+        className="relative z-10 mx-auto w-full max-w-6xl px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-8">
           <div>
             <motion.p
@@ -121,7 +147,7 @@ export default function Hero() {
             <Terminal />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <motion.a
         href="#about"
