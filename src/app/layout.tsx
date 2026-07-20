@@ -3,6 +3,7 @@ import { Inter, Bricolage_Grotesque, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Grain from "@/components/grain";
 import CustomCursor from "@/components/custom-cursor";
+import HoverFix from "@/components/hover-fix";
 import ScrollProgress from "@/components/scroll-progress";
 import ScrollToTop from "@/components/scroll-to-top";
 import KonamiEasterEgg from "@/components/konami-easter-egg";
@@ -112,6 +113,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-accent">
         <Grain />
         <CustomCursor />
+        <HoverFix />
         <ScrollProgress />
         <ScrollToTop />
         <KonamiEasterEgg />
