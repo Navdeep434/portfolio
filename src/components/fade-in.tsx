@@ -7,7 +7,9 @@ type FadeInProps = {
   children: ReactNode;
   delay?: number;
   y?: number;
+  x?: number;
   duration?: number;
+  ease?: [number, number, number, number];
   className?: string;
   once?: boolean;
 };
@@ -16,16 +18,19 @@ export default function FadeIn({
   children,
   delay = 0,
   y = 24,
+  x = 0,
   duration = 0.6,
+  ease = [0.22, 1, 0.36, 1] as [number, number, number, number],
   className,
   once = true,
 }: FadeInProps) {
   const variants: Variants = {
-    hidden: { opacity: 0, y },
+    hidden: { opacity: 0, y, x },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration, delay, ease: [0.22, 1, 0.36, 1] },
+      x: 0,
+      transition: { duration, delay, ease },
     },
   };
 

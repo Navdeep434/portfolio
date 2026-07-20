@@ -34,7 +34,7 @@ export default function About() {
     <section id="about" className="relative py-28 lg:py-36">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <FadeIn>
+          <FadeIn x={-28} y={0} duration={0.7}>
             <div className="relative mx-auto w-full max-w-sm">
               <div className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-br from-accent/20 to-transparent blur-2xl" />
               <TiltCard maxTilt={8} className="relative">
@@ -61,7 +61,7 @@ export default function About() {
           </FadeIn>
 
           <div>
-            <FadeIn>
+            <FadeIn x={28} y={0} duration={0.7}>
               <SectionKicker index="01" label="About" />
               <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
                 Engineering software that holds up in production
@@ -99,18 +99,31 @@ export default function About() {
             </FadeIn>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {focusAreas.map((area, i) => (
-                <FadeIn key={area.title} delay={0.15 + i * 0.08}>
-                  <SpotlightCard className="h-full rounded-2xl border border-border-subtle bg-surface/60 p-5 transition-colors hover:border-accent/50">
-                    <h3 className="font-display text-sm font-semibold text-foreground">
-                      {area.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">
-                      {area.description}
-                    </p>
-                  </SpotlightCard>
-                </FadeIn>
-              ))}
+              {focusAreas.map((area, i) => {
+                const isFeatured = i === 2;
+                return (
+                  <FadeIn
+                    key={area.title}
+                    delay={0.15 + i * 0.08}
+                    y={i === 1 ? 18 : 30}
+                  >
+                    <SpotlightCard
+                      className={
+                        isFeatured
+                          ? "h-full rounded-3xl border border-accent/40 bg-accent-soft p-5 transition-colors hover:border-accent"
+                          : `h-full border border-border-subtle bg-surface/60 p-5 transition-colors hover:border-accent/50 ${i === 0 ? "rounded-xl" : "rounded-2xl"}`
+                      }
+                    >
+                      <h3 className="font-display text-sm font-semibold text-foreground">
+                        {area.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted">
+                        {area.description}
+                      </p>
+                    </SpotlightCard>
+                  </FadeIn>
+                );
+              })}
             </div>
           </div>
         </div>

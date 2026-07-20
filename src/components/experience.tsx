@@ -19,7 +19,7 @@ export default function Experience() {
           <ol className="space-y-14">
             {experience.map((item, i) => (
               <li key={`${item.company}-${item.role}`} className="relative">
-                <FadeIn delay={i * 0.05}>
+                <FadeIn delay={i * 0.05} x={-20} y={0} duration={0.5}>
                   <span className="absolute -left-8 top-1.5 flex h-3.5 w-3.5 items-center justify-center sm:-left-10">
                     <span className="absolute h-3.5 w-3.5 rounded-full bg-accent/25" />
                     <span className="h-2 w-2 rounded-full bg-accent" />
