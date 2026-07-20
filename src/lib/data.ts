@@ -112,10 +112,10 @@ export const experience: ExperienceItem[] = [
     location: "Bengaluru, Karnataka",
     duration: "Jul 2025 — Present",
     bullets: [
-      "Developing enterprise Vendor Management and Procurement-to-Pay (P2P) systems using Node.js and Express.js.",
+      "Developing an enterprise Vendor Management and Procurement-to-Pay (P2P) platform with Next.js and Java Spring Boot.",
       "Designing secure RESTful APIs with JWT-based authentication and role-based access control (RBAC).",
       "Building automated compliance reporting modules to streamline regulatory and operational processes.",
-      "Optimizing MySQL queries and backend services for improved scalability and performance.",
+      "Optimizing Oracle Database queries and backend services for improved scalability and performance.",
     ],
   },
   {
@@ -178,7 +178,7 @@ export const projects: Project[] = [
     title: "Vendor Management & P2P Platform",
     description:
       "Enterprise procurement workflows covering vendor onboarding, invoice processing, approval hierarchies, and compliance automation.",
-    tech: ["Node.js", "Express.js", "MySQL", "JWT", "RBAC"],
+    tech: ["Next.js", "Java", "Spring Boot", "Oracle DB", "JWT", "RBAC"],
     featured: true,
     tone: "#84cc16",
     year: "2025",
@@ -186,11 +186,11 @@ export const projects: Project[] = [
     problem:
       "Procurement teams were managing vendor onboarding, invoices, and approvals through disconnected spreadsheets and email threads, making compliance tracking slow and error-prone.",
     solution:
-      "Built a Node.js/Express platform with JWT-based authentication and role-based access control, covering the full procure-to-pay workflow from vendor onboarding through invoice approval, with automated compliance reporting.",
+      "Built a Next.js platform backed by Java Spring Boot services and Oracle Database, with JWT-based authentication and role-based access control covering the full procure-to-pay workflow from vendor onboarding through invoice approval and automated compliance reporting.",
     highlights: [
       "Centralized vendor onboarding and invoice approval into a single auditable workflow.",
       "Enforced per-role access control (RBAC), reducing unauthorized approval risk.",
-      "Optimized MySQL queries to keep compliance reporting fast at scale.",
+      "Optimized Oracle Database queries to keep compliance reporting fast at scale.",
     ],
   },
   {

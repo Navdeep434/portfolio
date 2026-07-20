@@ -38,14 +38,22 @@ export default function Projects() {
               <button
                 key={f}
                 onClick={() => setFilter(f)}
+                aria-pressed={filter === f}
                 data-cursor-hover
-                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
+                className={`relative overflow-hidden rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
                   filter === f
-                    ? "border-accent bg-accent-soft text-accent"
+                    ? "border-accent text-accent"
                     : "border-border-subtle text-muted hover:border-accent/50 hover:text-foreground"
                 }`}
               >
-                {f}
+                {filter === f && (
+                  <motion.span
+                    layoutId="project-filter-active"
+                    className="absolute inset-0 bg-accent-soft"
+                    transition={{ type: "spring", stiffness: 420, damping: 34 }}
+                  />
+                )}
+                <span className="relative z-10">{f}</span>
               </button>
             ))}
           </div>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import {
+  AnimatePresence,
   motion,
   useScroll,
   useTransform,
@@ -15,6 +16,12 @@ import ParticleField from "@/components/particle-field";
 import { withBasePath } from "@/lib/base-path";
 
 const nameWords = ["Navdeep", "Raushan"];
+const specialties = [
+  "Full-Stack Developer",
+  "Backend Engineer",
+  "API Architect",
+  "Real-Time Systems Builder",
+];
 
 function getGreeting(date: Date) {
   const hour = date.getHours();
@@ -46,6 +53,7 @@ const letter: Variants = {
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const [greeting, setGreeting] = useState("Hello");
+  const [specialtyIndex, setSpecialtyIndex] = useState(0);
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -56,6 +64,16 @@ export default function Hero() {
 
     return () => window.clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (shouldReduceMotion) return;
+
+    const interval = window.setInterval(() => {
+      setSpecialtyIndex((current) => (current + 1) % specialties.length);
+    }, 2_800);
+
+    return () => window.clearInterval(interval);
+  }, [shouldReduceMotion]);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -125,9 +143,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-3 font-mono text-sm text-accent"
+              className="mb-3 inline-flex items-center gap-2 font-mono text-sm text-accent"
               aria-live="polite"
             >
+              <span className="h-px w-7 bg-accent" aria-hidden="true" />
               {greeting}, welcome to my portfolio.
             </motion.p>
 
@@ -153,7 +172,11 @@ export default function Hero() {
               {nameWords.map((word, wi) => (
                 <span key={wi} className="inline-flex whitespace-nowrap">
                   {word.split("").map((char, ci) => (
-                    <motion.span key={ci} variants={letter} className="inline-block">
+                    <motion.span
+                      key={ci}
+                      variants={letter}
+                      className="inline-block transition-[color,transform] duration-200 hover:-translate-y-1 hover:text-accent"
+                    >
                       {char}
                     </motion.span>
                   ))}
@@ -161,19 +184,42 @@ export default function Hero() {
               ))}
             </motion.div>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.55 }}
               className="mt-5 max-w-lg text-lg leading-relaxed text-muted"
             >
-              <span className="text-gradient font-medium">Full-Stack Developer</span>{" "}
+              <button
+                type="button"
+                onClick={() =>
+                  setSpecialtyIndex((current) => (current + 1) % specialties.length)
+                }
+                className="group relative inline-grid h-[1.5em] min-w-[13.5rem] cursor-pointer overflow-hidden align-bottom text-left font-medium sm:min-w-[15.5rem]"
+                aria-label="Cycle through my specialties"
+                title="Click to see another specialty"
+                data-cursor-hover
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.span
+                    key={specialties[specialtyIndex]}
+                    initial={{ y: "70%", opacity: 0, filter: "blur(4px)" }}
+                    animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                    exit={{ y: "-70%", opacity: 0, filter: "blur(4px)" }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-gradient absolute inset-x-0 top-0 whitespace-nowrap"
+                  >
+                    {specialties[specialtyIndex]}
+                  </motion.span>
+                </AnimatePresence>
+                <span className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-accent transition-transform duration-300 group-hover:scale-x-100" />
+              </button>{" "}
               building scalable systems across{" "}
               <span className="text-foreground">Node.js</span>,{" "}
               <span className="text-foreground">React</span> &{" "}
               <span className="text-foreground">Next.js</span> — secure APIs,
               real-time features, code that holds up in production.
-            </motion.p>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 12 }}
