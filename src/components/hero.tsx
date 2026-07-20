@@ -1,7 +1,13 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform, type Variants } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
 import { FiArrowDown, FiArrowRight, FiDownload } from "react-icons/fi";
 import MagneticButton from "@/components/magnetic-button";
 import Terminal from "@/components/terminal";
@@ -29,17 +35,42 @@ const letter: Variants = {
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
+  const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
   });
 
-  const yBlobFast = useTransform(scrollYProgress, [0, 1], [0, -140]);
-  const yBlobMid = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const yBlobSlow = useTransform(scrollYProgress, [0, 1], [0, -180]);
-  const yGrid = useTransform(scrollYProgress, [0, 1], [0, -40]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
-  const contentY = useTransform(scrollYProgress, [0, 0.55], [0, 60]);
+  const yBlobFast = useTransform(
+    scrollYProgress,
+    [0, 1],
+    shouldReduceMotion ? [0, 0] : [0, -140]
+  );
+  const yBlobMid = useTransform(
+    scrollYProgress,
+    [0, 1],
+    shouldReduceMotion ? [0, 0] : [0, -80]
+  );
+  const yBlobSlow = useTransform(
+    scrollYProgress,
+    [0, 1],
+    shouldReduceMotion ? [0, 0] : [0, -180]
+  );
+  const yGrid = useTransform(
+    scrollYProgress,
+    [0, 1],
+    shouldReduceMotion ? [0, 0] : [0, -40]
+  );
+  const contentOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.55],
+    shouldReduceMotion ? [1, 1] : [1, 0]
+  );
+  const contentY = useTransform(
+    scrollYProgress,
+    [0, 0.55],
+    shouldReduceMotion ? [0, 0] : [0, 60]
+  );
 
   return (
     <section

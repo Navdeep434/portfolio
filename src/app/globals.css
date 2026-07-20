@@ -90,6 +90,12 @@ body {
   color: #1c1005;
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 /* Custom thin scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

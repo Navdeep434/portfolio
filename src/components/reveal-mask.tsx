@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 type RevealMaskProps = {
@@ -16,8 +16,13 @@ export default function RevealMask({
   className,
   direction = "left",
 }: RevealMaskProps) {
+  const shouldReduceMotion = useReducedMotion();
   const hiddenClip =
     direction === "left" ? "inset(0 0 0 100%)" : "inset(0 100% 0 0)";
+
+  if (shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div
