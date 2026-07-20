@@ -4,6 +4,7 @@ import "./globals.css";
 import Grain from "@/components/grain";
 import CustomCursor from "@/components/custom-cursor";
 import ScrollProgress from "@/components/scroll-progress";
+import ScrollToTop from "@/components/scroll-to-top";
 import KonamiEasterEgg from "@/components/konami-easter-egg";
 import CursorSpotlight from "@/components/cursor-spotlight";
 
@@ -100,6 +101,7 @@ export default function RootLayout({
         <Grain />
         <CustomCursor />
         <ScrollProgress />
+        <ScrollToTop />
         <KonamiEasterEgg />
         <CursorSpotlight />
         {children}
