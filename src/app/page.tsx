@@ -8,7 +8,7 @@ import ArchitectureLab from "@/components/architecture-lab";
 import GithubStats from "@/components/github-stats";
 import Experience from "@/components/experience";
 import Projects from "@/components/projects";
-import Testimonials from "@/components/testimonials";
+import Education from "@/components/education";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 
@@ -26,7 +26,7 @@ export default function Home() {
         <TextMarquee />
         <Experience />
         <Projects />
-        <Testimonials />
+        <Education />
         <Contact />
       </main>
       <Footer />

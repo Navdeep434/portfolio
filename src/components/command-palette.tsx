@@ -10,7 +10,7 @@ import {
   FiCpu,
   FiBriefcase,
   FiFolder,
-  FiMessageSquare,
+  FiAward,
   FiMail,
   FiSun,
   FiMoon,
@@ -179,10 +179,10 @@ export default function CommandPalette() {
                       <FiFolder size={15} /> Projects
                     </Command.Item>
                     <Command.Item
-                      onSelect={() => goTo("#testimonials")}
+                      onSelect={() => goTo("#education")}
                       className="flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-foreground/90 aria-selected:bg-accent-soft aria-selected:text-accent"
                     >
-                      <FiMessageSquare size={15} /> Testimonials
+                      <FiAward size={15} /> Education
                     </Command.Item>
                     <Command.Item
                       onSelect={() => goTo("#contact")}

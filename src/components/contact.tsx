@@ -2,11 +2,21 @@
 
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { FiCode, FiGithub, FiLinkedin, FiMail, FiSend } from "react-icons/fi";
+import {
+  FiCode,
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiSend,
+  FiPhone,
+  FiMapPin,
+  FiCalendar,
+  FiFlag,
+} from "react-icons/fi";
 import FadeIn from "@/components/fade-in";
 import SectionKicker from "@/components/section-kicker";
 import ConfettiBurst from "@/components/confetti-burst";
-import { socials } from "@/lib/data";
+import { socials, personalInfo } from "@/lib/data";
 
 type FormState = {
   name: string;
@@ -22,6 +32,13 @@ const socialLinks = [
   { label: "GitHub (Freelance)", href: socials.githubFreelance, icon: FiCode },
   { label: "LinkedIn", href: socials.linkedin, icon: FiLinkedin },
   { label: "Email", href: `mailto:${socials.email}`, icon: FiMail },
+];
+
+const bioDetails = [
+  { label: personalInfo.phone, icon: FiPhone },
+  { label: personalInfo.location, icon: FiMapPin },
+  { label: personalInfo.dob, icon: FiCalendar },
+  { label: personalInfo.nationality, icon: FiFlag },
 ];
 
 function validate(values: FormState): FormErrors {
@@ -101,6 +118,18 @@ export default function Contact() {
                 </motion.a>
               ))}
             </div>
+
+            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2.5">
+              {bioDetails.map(({ label, icon: Icon }) => (
+                <li
+                  key={label}
+                  className="flex items-center gap-2 text-sm text-muted"
+                >
+                  <Icon size={14} className="text-accent" />
+                  {label}
+                </li>
+              ))}
+            </ul>
           </FadeIn>
 
           <FadeIn delay={0.1}>

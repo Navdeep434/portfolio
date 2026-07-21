@@ -288,3 +288,42 @@ export const socials = {
   linkedin: "https://www.linkedin.com/in/navdeep-raushan-656895157",
   email: "hello@navdeepraushan.in",
 };
+
+export type Education = {
+  school: string;
+  degree: string;
+  duration: string;
+  location: string;
+  details: string[];
+};
+
+export const education: Education[] = [
+  {
+    school: "Techno Engineering College Banipur",
+    degree: "Bachelor of Technology",
+    duration: "08/2016 — 07/2020",
+    location: "Kolkata, India",
+    details: ["Stream: Mechanical Engineering", "DGPA: 7.65"],
+  },
+  {
+    school: "A S Patna Central School",
+    degree: "Intermediate (12th)",
+    duration: "2016",
+    location: "Patna, India",
+    details: ["Stream: PCM", "Percentage: 68%"],
+  },
+  {
+    school: "A S Patna Central School",
+    degree: "Matriculation (10th)",
+    duration: "2014",
+    location: "Patna, India",
+    details: ["Percentage: 87.4%"],
+  },
+];
+
+export const personalInfo = {
+  phone: "+91 95347 65781",
+  dob: "28/05/1998",
+  nationality: "Indian",
+  location: "Bengaluru, Karnataka",
+};
