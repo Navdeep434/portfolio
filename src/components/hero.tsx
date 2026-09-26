@@ -18,7 +18,7 @@ import { withBasePath } from "@/lib/base-path";
 const nameWords = ["Navdeep", "Raushan"];
 const specialties = [
   "Full-Stack Developer",
-  "Backend Engineer",
+  "Node.js Backend Engineer",
   "API Architect",
   "Real-Time Systems Builder",
 ];

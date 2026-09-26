@@ -8,9 +8,12 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaNodeJs,
+  FaJava,
+  FaDatabase,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
+  SiSpringboot,
   SiJavascript,
   SiTailwindcss,
   SiMysql,
@@ -31,6 +34,8 @@ import { skillCategories } from "@/lib/data";
 const iconMap: Record<string, IconType> = {
   react: FaReact,
   nextjs: SiNextdotjs,
+  java: FaJava,
+  springboot: SiSpringboot,
   javascript: SiJavascript,
   tailwind: SiTailwindcss,
   bootstrap: FaBootstrap,
@@ -43,6 +48,7 @@ const iconMap: Record<string, IconType> = {
   socketio: SiSocketdotio,
   mysql: SiMysql,
   mongodb: SiMongodb,
+  oracle: FaDatabase,
   git: FaGitAlt,
   github: FaGithub,
   postman: SiPostman,

@@ -1,7 +1,15 @@
 import type { IconType } from "react-icons";
-import { FaReact, FaGitAlt, FaDocker, FaNodeJs } from "react-icons/fa";
+import {
+  FaReact,
+  FaGitAlt,
+  FaDocker,
+  FaNodeJs,
+  FaJava,
+  FaDatabase,
+} from "react-icons/fa";
 import {
   SiNextdotjs,
+  SiSpringboot,
   SiJavascript,
   SiTailwindcss,
   SiMysql,
@@ -12,6 +20,9 @@ import {
 } from "react-icons/si";
 
 const items: { name: string; icon: IconType }[] = [
+  { name: "Java", icon: FaJava },
+  { name: "Spring Boot", icon: SiSpringboot },
+  { name: "Oracle Database", icon: FaDatabase },
   { name: "Node.js", icon: FaNodeJs },
   { name: "Express.js", icon: SiExpress },
   { name: "React", icon: FaReact },

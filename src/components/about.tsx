@@ -24,7 +24,7 @@ const focusAreas = [
 ];
 
 const stats = [
-  { value: 3, suffix: "+", label: "Years experience" },
+  { value: 4, suffix: "+", label: "Years experience" },
   { value: 4, suffix: "", label: "Full-stack roles" },
   { value: 5, suffix: "", label: "Business domains" },
 ];
@@ -53,7 +53,7 @@ export default function About() {
               </TiltCard>
               <div className="glass absolute -bottom-6 -right-6 rounded-2xl px-5 py-4 shadow-lg">
                 <p className="font-display text-2xl font-semibold text-accent">
-                  <AnimatedCounter value={3} suffix="+" />
+                  <AnimatedCounter value={4} suffix="+" />
                 </p>
                 <p className="text-xs text-muted">Years building software</p>
               </div>
@@ -70,20 +70,19 @@ export default function About() {
 
             <FadeIn delay={0.1}>
               <p className="mt-6 text-base leading-relaxed text-muted">
-                I&apos;m a full-stack developer who moves comfortably across
-                the stack — building secure REST APIs in Node.js and
-                Express, designing JWT-based auth and role-based access
-                control, and shipping responsive frontends in React and
-                Next.js. I care about clean architecture, readable code, and
-                systems that are easy to reason about six months later.
+                I&apos;m a full-stack developer with 4+ years of experience
+                building scalable web applications with Node.js, Express.js,
+                React.js, and Next.js. I design secure REST APIs with JWT
+                authentication and role-based access control, and build
+                production systems that remain clear and maintainable as they
+                grow.
               </p>
               <p className="mt-4 text-base leading-relaxed text-muted">
-                Across procurement, hospitality, telecom, and e-commerce
-                systems, most of my work sits at the intersection of backend
-                architecture and full-stack delivery: designing the data
-                model, exposing it through a well-considered API, and
-                building the interface that makes it usable — with Socket.io
-                wired in wherever things need to happen in real time.
+                My work spans procurement, vendor management, hospitality and
+                elder care, telecom, astrology, and e-commerce. I work across
+                the full product path: shaping data models, building reliable
+                APIs, and delivering responsive interfaces, with real-time
+                features and payment integrations where they fit the product.
               </p>
             </FadeIn>
 

@@ -16,10 +16,13 @@ export default function PersonSchema() {
       "Express.js",
       "React",
       "Next.js",
+      "Java",
+      "Spring Boot",
       "JavaScript",
       "Socket.io",
       "MongoDB",
       "MySQL",
+      "Oracle Database",
     ],
   };
 

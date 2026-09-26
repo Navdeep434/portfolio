@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     template: "%s — Navdeep Raushan",
   },
   description:
-    "Full-Stack Developer building scalable systems across Node.js, Express, React, and Next.js. Explore my projects, experience, and skills.",
+    "Full-Stack Developer with 4+ years of experience building scalable applications with Node.js, Express.js, React.js, and Next.js. Explore projects, experience, and skills.",
   keywords: [
     "Navdeep Raushan",
     "Software Engineer",
@@ -48,9 +48,12 @@ export const metadata: Metadata = {
     "Express.js",
     "React Developer",
     "Next.js Developer",
+    "Java",
+    "Spring Boot",
     "JavaScript",
     "MongoDB",
     "MySQL",
+    "Oracle Database",
     "Socket.io",
     "Portfolio",
   ],
@@ -64,7 +67,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Navdeep Raushan — Full-Stack Developer",
     description:
-      "Full-Stack Developer building scalable systems across Node.js, React & Next.js.",
+      "Full-Stack Developer with 4+ years building scalable web applications across Node.js, React, and Next.js.",
     siteName: "Navdeep Raushan Portfolio",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
@@ -72,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Navdeep Raushan — Full-Stack Developer",
     description:
-      "Full-Stack Developer building scalable systems across Node.js, React & Next.js.",
+      "Full-Stack Developer with 4+ years building scalable web applications across Node.js, React, and Next.js.",
     images: ["/og-image.png"],
   },
   ...(googleSiteVerification

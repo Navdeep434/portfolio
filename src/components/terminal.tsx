@@ -8,9 +8,9 @@ const introLines = [
   { prompt: true, text: "whoami" },
   { prompt: false, text: 'navdeep_raushan --role "Full-Stack Developer"' },
   { prompt: true, text: "cat stack.json" },
-  { prompt: false, text: '{ "backend": ["Node.js", "Express.js", "Socket.io"],' },
+  { prompt: false, text: '{ "backend": ["Java", "Spring Boot", "Node.js", "Express.js"],' },
   { prompt: false, text: '  "frontend": ["React", "Next.js", "JavaScript"],' },
-  { prompt: false, text: '  "database": ["MySQL", "MongoDB"] }' },
+  { prompt: false, text: '  "database": ["Oracle", "MySQL", "MongoDB"] }' },
 ];
 
 const INTRO_TEXT = introLines.map((l) => l.text).join("\n");
@@ -42,7 +42,7 @@ function runCommand(raw: string): { output: string[]; clear?: boolean } {
     case "about":
       return {
         output: [
-          "Full-stack developer working across Node.js/Express, React/Next.js,",
+          "Full-stack developer with 4+ years across Node.js/Express, React/Next.js,",
           "and MySQL/MongoDB. I like clean APIs and interfaces that don't fight the user.",
         ],
       };
@@ -50,8 +50,9 @@ function runCommand(raw: string): { output: string[]; clear?: boolean } {
       return {
         output: [
           "backend:  Node.js, Express.js, REST APIs, JWT, Socket.io",
+          "enterprise: Java, Spring Boot",
           "frontend: React.js, Next.js, JavaScript (ES6+), Tailwind CSS",
-          "database: MySQL, MongoDB",
+          "database: Oracle, MySQL, MongoDB",
           "tools:    Git, GitHub, Postman, Jira, Redis, Docker",
         ],
       };

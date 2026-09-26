@@ -70,6 +70,8 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Backend",
     items: [
+      { name: "Java", icon: "java" },
+      { name: "Spring Boot", icon: "springboot" },
       { name: "Node.js", icon: "nodejs" },
       { name: "Express.js", icon: "express" },
       { name: "REST APIs", icon: "api" },
@@ -80,6 +82,7 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Database",
     items: [
+      { name: "Oracle Database", icon: "oracle" },
       { name: "MySQL", icon: "mysql" },
       { name: "MongoDB", icon: "mongodb" },
     ],
@@ -112,7 +115,7 @@ export const experience: ExperienceItem[] = [
     location: "Bengaluru, Karnataka",
     duration: "Jul 2025 — Present",
     bullets: [
-      "Developing an enterprise Vendor Management and Procurement-to-Pay (P2P) platform with Next.js and Java Spring Boot.",
+      "Developing an enterprise Vendor Management and Procurement-to-Pay (P2P) platform with Next.js, Java Spring Boot, and Oracle Database.",
       "Designing secure RESTful APIs with JWT-based authentication and role-based access control (RBAC).",
       "Building automated compliance reporting modules to streamline regulatory and operational processes.",
       "Optimizing Oracle Database queries and backend services for improved scalability and performance.",
@@ -136,7 +139,7 @@ export const experience: ExperienceItem[] = [
     location: "Hyderabad, India",
     duration: "Jan 2023 — Aug 2024",
     bullets: [
-      "Developed a telecom CRM system managing SIM cards, tariffs, smartphones, and customer lifecycle workflows.",
+      "Developed a telecom CRM managing SIM cards, tariffs, smartphones, landline, and data services, with customer lifecycle and offer-management workflows.",
       "Built and maintained responsive frontend applications using React.js.",
       "Designed RESTful APIs and backend services using Node.js and MySQL.",
       "Collaborated with cross-functional teams to deliver high-quality, production-ready solutions.",
@@ -178,7 +181,7 @@ export const projects: Project[] = [
     title: "Vendor Management & P2P Platform",
     description:
       "Enterprise procurement workflows covering vendor onboarding, invoice processing, approval hierarchies, and compliance automation.",
-    tech: ["Next.js", "Java", "Spring Boot", "Oracle DB", "JWT", "RBAC"],
+    tech: ["Next.js", "Java", "Spring Boot", "Oracle Database", "JWT", "RBAC"],
     featured: true,
     tone: "#84cc16",
     year: "2025",
@@ -286,7 +289,7 @@ export const socials = {
   github: `https://github.com/${githubUsername}`,
   githubFreelance: `https://github.com/${githubFreelanceUsername}`,
   linkedin: "https://www.linkedin.com/in/navdeep-raushan-656895157",
-  email: "hello@navdeepraushan.in",
+  email: "n.navdeepraushan98@gmail.com",
 };
 
 export type Education = {

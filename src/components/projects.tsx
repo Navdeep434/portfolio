@@ -7,7 +7,15 @@ import SectionKicker from "@/components/section-kicker";
 import ProjectCard from "@/components/project-card";
 import { projects } from "@/lib/data";
 
-const filters = ["All", "React.js", "MySQL", "Socket.io"];
+const filters = [
+  "All",
+  "React.js",
+  "MySQL",
+  "Socket.io",
+  "Next.js",
+  "Spring Boot",
+  "Oracle Database",
+];
 
 export default function Projects() {
   const [filter, setFilter] = useState("All");
