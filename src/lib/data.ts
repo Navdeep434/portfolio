@@ -181,7 +181,16 @@ export const projects: Project[] = [
     title: "Vendor Management & P2P Platform",
     description:
       "Enterprise procurement workflows covering vendor onboarding, invoice processing, approval hierarchies, and compliance automation.",
-    tech: ["Node.js", "Express.js", "MySQL", "JWT", "RBAC"],
+    tech: [
+      "Node.js",
+      "Express.js",
+      "MySQL",
+      "Java",
+      "Spring Boot",
+      "Next.js",
+      "JWT",
+      "RBAC",
+    ],
     featured: true,
     tone: "#84cc16",
     year: "2025",
@@ -189,7 +198,7 @@ export const projects: Project[] = [
     problem:
       "Procurement teams were managing vendor onboarding, invoices, and approvals through disconnected spreadsheets and email threads, making compliance tracking slow and error-prone.",
     solution:
-      "Built a Node.js/Express platform with JWT-based authentication and role-based access control, covering the full procure-to-pay workflow from vendor onboarding through invoice approval, with automated compliance reporting.",
+      "Built enterprise procure-to-pay workflows using Java Spring Boot and Next.js alongside Node.js, Express.js, MySQL, JWT authentication, and role-based access control, from vendor onboarding through invoice approval and compliance reporting.",
     highlights: [
       "Centralized vendor onboarding and invoice approval into a single auditable workflow.",
       "Enforced per-role access control (RBAC), reducing unauthorized approval risk.",
