@@ -115,7 +115,7 @@ export const experience: ExperienceItem[] = [
     location: "Bengaluru, Karnataka",
     duration: "Jul 2025 — Present",
     bullets: [
-      "Developing enterprise Vendor Management and Procurement-to-Pay (P2P) systems using Java Spring Boot.",
+      "Developing enterprise Vendor Management and Procurement-to-Pay (P2P) systems using Java Spring Boot and Next.js.",
       "Designing secure RESTful APIs with JWT-based authentication and role-based access control (RBAC).",
       "Building automated compliance reporting modules to streamline regulatory and operational processes.",
       "Optimizing MySQL queries and backend services for improved scalability and performance.",
